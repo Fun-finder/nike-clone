@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+/*  */
+/* Header css */
+/*  */
+.Header {
+  height: 25px;
+  padding: 5px 25px;
+  background-color: #f7f7f7;
+}
+@media (max-width: 768px) {
+  .Header {
+    display: none;
+  }
+}
+
+.header-span {
+  display: inline-block;
+  position: absolute;
+  top: 8px;
+}
+/* Header-left */
+.headerLeft {
+  width: 80px;
+  left: 30px;
+}
+.headerIcons {
+  padding-right: 8px;
+}
+
+/* Header-right */
+.header-span ul {
+  margin: 0;
+  padding: 0;
+}
+.listline {
+  border-right: black solid 1px;
+  line-height: 10px;
+}
+.headerRight {
+  width: 190px;
+  right: 30px;
+  float: right;
+  font-size: 12px;
+}
+.headerList {
+  display: inline-block;
+  list-style: none;
+  padding: 0 8px;
+}
+.headerList a {
+  text-decoration: none;
+}
+/*  */
