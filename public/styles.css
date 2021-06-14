@@ -1,0 +1,178 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+/*  */
+/* Header css */
+/*  */
+.Header {
+  height: 25px;
+  padding: 5px 25px;
+  background-color: #f7f7f7;
+}
+@media (max-width: 768px) {
+  .Header {
+    display: none;
+  }
+}
+
+.header-span {
+  display: inline-block;
+  position: absolute;
+  top: 8px;
+}
+/* Header-left */
+.headerLeft {
+  width: 80px;
+  left: 30px;
+}
+.headerIcons {
+  padding-right: 8px;
+}
+
+/* Header-right */
+
+.listline {
+  border-right: black solid 1px;
+  line-height: 10px;
+}
+.headerRight {
+  width: 190px;
+  right: 30px;
+  float: right;
+  font-size: 12px;
+}
+.headerList {
+  display: inline-block;
+  list-style: none;
+  padding: 0 8px;
+}
+.headerList a {
+  text-decoration: none;
+  color: #222;
+}
+.headerList a:hover {
+  color: #777;
+}
+/*  */
+/* //////////////////Nav-Bar */
+
+.NavBar {
+  height: 60px;
+  width: calc(100%-25px);
+  position: relative;
+  background-color: white;
+}
+.NavBar div {
+  display: inline-block;
+}
+.navList {
+  display: inline-block;
+}
+.homeLogo {
+  position: relative;
+  float: left;
+  padding: 0 40px;
+  font-size: 30px;
+}
+.NavMenu {
+  float: center;
+  padding: auto 0;
+  height: 60px;
+}
+.NavMenu ul {
+  height: 60px;
+}
+.navList {
+  font-size: 17px;
+  vertical-align: middle;
+  padding: 18px 13px;
+  margin-right: 3px;
+  border-bottom: 2px transparent solid;
+}
+.navList a {
+  text-decoration: none;
+  color: black;
+  top: 0;
+}
+.navList:hover {
+  border-bottom: 2px black solid;
+}
+.navRight {
+  float: right;
+  padding-right: 40px;
+}
+.navIcons {
+  font-size: 27px;
+  padding: 5px;
+  border-radius: 20px;
+}
+.xIcon {
+  float: right;
+  padding: 5px;
+  padding-right: 20px;
+  font-size: 27px;
+
+  border-radius: 20px;
+}
+/* nav - search */
+.searchBar {
+  border-radius: 25px;
+  height: 38px;
+  background-color: #eee;
+  margin: 12px 10px 0;
+}
+.searchInput {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  margin: 0 15px 0 5px;
+  height: 20px;
+  width: 115px;
+  float: inherit;
+  bottom: 11px;
+  transition: width 1s;
+  color: grey;
+}
+
+.searchBar:hover {
+  background-color: #ddd;
+}
+.searchInput:hover {
+  background-color: #ddd;
+}
+
+/* ///////ShowSearch */
+
+.ddSearchBox {
+  display: none;
+  background: white;
+  width: 100%;
+
+  z-index: 1;
+  position: absolute;
+  float: left;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.searchInput:focus {
+  outline: none;
+  cursor: text;
+  width: 600px;
+}
+
+.ShowSearch div {
+  display: inline-block;
+}
