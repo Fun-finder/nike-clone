@@ -4,6 +4,7 @@ import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 import CloseIcon from "@material-ui/icons/Close";
+
 function mouseOver(event) {
   const style = event.target.style;
 
@@ -31,7 +32,8 @@ function NavBar() {
     display: "none"
   });
   const [isDdMenu, setDdMenu] = useState({
-    display: "none"
+    visibility: "hidden",
+    transition: "1s"
   });
   const [isFloat, setFloat] = useState({
     float: "right"
@@ -39,7 +41,9 @@ function NavBar() {
   const [isNavBar, setNavBer] = useState({
     height: "60px"
   });
-
+  const [extendWidth, setWidth] = useState({
+    width: "115px"
+  });
   function focusHandler() {
     setDisplayed({
       display: "none"
@@ -51,10 +55,14 @@ function NavBar() {
       display: "inline-block"
     });
     setDdMenu({
-      display: "block"
+      visibility: "visible",
+      transition: "1s"
     });
     setNavBer({
       height: "300px"
+    });
+    setWidth({
+      width: "600px"
     });
   }
   function blurHandler() {
@@ -68,10 +76,14 @@ function NavBar() {
       display: "none"
     });
     setDdMenu({
-      display: "none"
+      visibility: "hidden",
+      transition: 0
     });
     setNavBer({
       height: "60px"
+    });
+    setWidth({
+      width: "115px"
     });
   }
 
@@ -109,7 +121,8 @@ function NavBar() {
               type="text"
               placeholder="검색"
               onFocus={focusHandler}
-              onBlur={blurHandler}
+              style={extendWidth}
+              // onBlur={blurHandler}
             />
           </div>
           <nav className="ddSearchBox " style={isDdMenu}>
@@ -145,7 +158,7 @@ function NavBar() {
         </div>
       </div>
 
-      <span className=" rightIcon xIcon" style={isX}>
+      <span className=" rightIcon xIcon" style={isX} onClick={blurHandler}>
         <CloseIcon
           style={iconStyle}
           onMouseOver={mouseOver}
