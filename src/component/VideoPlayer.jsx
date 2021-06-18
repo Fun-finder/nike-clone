@@ -1,14 +1,14 @@
 import React from "react";
 import ReactPlayer from "react-player";
 
-export default function VideoPlayer() {
+export default function VideoPlayer(props) {
   return (
     <div className="VideoPlayer">
       <ReactPlayer
         className="reactPlayer"
         muted={true}
         playing={true}
-        url="https://youtu.be/-SBsT032jVI"
+        url={props.url}
         loop={true}
         width="100%"
         height="100%"
