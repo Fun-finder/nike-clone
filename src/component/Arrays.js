@@ -33,7 +33,7 @@ const [summer, sandel, tShirts, washPack, waffle, airMax] = [
     title: "나이키 에어맥스 프리데이",
     content: `레트로 트랙룩 감성을 더한 새로운 에어맥스
   나이키 에어맥스 프리데이를 만나보세요.`,
-    buttn: ["구매하기"]
+    button: ["구매하기"]
   }
 ];
 

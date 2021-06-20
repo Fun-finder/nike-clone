@@ -70,7 +70,7 @@ function NavBar() {
       display: "inline-block"
     });
     setFloat({
-      float: "float"
+      float: "right"
     });
     setX({
       display: "none"
@@ -93,7 +93,7 @@ function NavBar() {
         className="homeLogo"
         style={{ fontSize: 60, zIndex: 2 }}
       />
-      <span className="NavMenu" style={isDisplayed}>
+      <div className="NavMenu" style={isDisplayed}>
         <ul>
           <li className="navList">
             <a href="/"> New Releases</a>
@@ -111,7 +111,7 @@ function NavBar() {
             <a href="/"> Sale</a>
           </li>
         </ul>
-      </span>
+      </div>
       <div className="navRight" style={isFloat}>
         <div className="ddL">
           <div className="searchBar">
@@ -127,14 +127,14 @@ function NavBar() {
           </div>
           <nav className="ddSearchBox " style={isDdMenu}>
             <h4>추천 검색어</h4>
-            <p>
+            <div>
               <ul>
                 <li>와플 원</li>
                 <li>요가복</li>
                 <li>썸머 에센셜</li>
                 <li>지속 가능 컬렉션</li>
               </ul>
-            </p>
+            </div>
           </nav>
         </div>
         <div style={isDisplayed}>

@@ -23,8 +23,8 @@ export default function SlowSlide() {
   }, 1000);
 
   return (
-    <div class="slowContainer">
-      <div class="slowWrapper">
+    <div className="slowContainer">
+      <div className="slowWrapper">
         <div className="imgFrame">
           <img className="slowImg" src={firstImg} alt="" />
         </div>

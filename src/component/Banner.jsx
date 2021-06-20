@@ -2,7 +2,7 @@ import React from "react";
 
 function renderBtn(btn, index) {
   return (
-    <button index={index} className="bannerButton">
+    <button key={index} index={index} className="bannerButton">
       {btn}
     </button>
   );

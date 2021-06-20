@@ -7,12 +7,13 @@ import ImageSlider from "./ImageSlider";
 import Images from "./Images";
 import * as Array from "./Arrays";
 import SlowSlider from "./SlowSlider";
-import NinetySlide from "./NinetySlide";
-
+import Swipers from "./Swipers";
+import FeaturedShoes from "./FeaturedShoes";
+import Footer from "./Footer";
 export default function App() {
   return (
     <div className="App">
-      {/* <Header />
+      <Header />
       <NavBar />
       <VideoPlayer url="https://youtu.be/-SBsT032jVI" />
       <Banner
@@ -44,8 +45,15 @@ export default function App() {
         title={Array.waffle.title}
         content={Array.waffle.content}
         button={Array.waffle.button}
-      /> */}
-      <NinetySlide />
+      />
+      <Swipers />
+      <Banner
+        title={Array.airMax.title}
+        content={Array.airMax.content}
+        button={Array.airMax.button}
+      />
+      <FeaturedShoes />
+      <Footer />
     </div>
   );
 }
