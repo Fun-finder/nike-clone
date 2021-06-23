@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  min-width: 500px;
 }
 ul {
   margin: 0;
@@ -18,29 +19,32 @@ a {
 /*  */
 /* Header css */
 /*  */
+
 .Header {
   height: 25px;
-  padding: 5px 25px;
+  padding: 5px 0;
   background-color: #f7f7f7;
 }
 @media (max-width: 768px) {
   .Header {
-    display: none;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    padding: 0;
   }
 }
-
+.header-container {
+  width: 93vw;
+  height: 25px;
+  margin: 0 auto;
+}
 .header-span {
   display: inline-block;
-  position: absolute;
   top: 8px;
 }
 /* Header-left */
 .headerLeft {
-  width: 80px;
-  left: 30px;
-}
-.headerIcons {
-  padding-right: 8px;
+  float: left;
 }
 
 /* Header-right */
@@ -50,8 +54,6 @@ a {
   line-height: 10px;
 }
 .headerRight {
-  width: 190px;
-  right: 30px;
   float: right;
   font-size: 12px;
 }
@@ -67,12 +69,21 @@ a {
 .headerList a:hover {
   color: #777;
 }
-/*  */
-/* //////////////////Nav-Bar */
 
+/*  */
+/* //////////////////Nav-Bar ////////////////*/
+
+.fixedNav {
+  transition: top 0.05s;
+  position: fixed;
+  padding-left: 3.5vw;
+  padding-right: 3.5vw;
+  z-index: 2;
+  background-color: white;
+}
 .NavBar {
   height: 60px;
-  width: 93%;
+  width: 93.2vw;
   margin: 0 auto;
   position: relative;
   background-color: white;
@@ -87,9 +98,10 @@ a {
 .homeLogo {
   position: relative;
   float: left;
-  padding: 0 40px;
+  padding: 0;
   font-size: 30px;
 }
+/* nav middle menu */
 .NavMenu {
   float: center;
   padding: auto 0;
@@ -113,13 +125,17 @@ a {
 .navList:hover {
   border-bottom: 2px black solid;
 }
+/* nav right (search-bar, icons) */
 .navRight {
   float: right;
 }
 .navIcons {
-  font-size: 27px;
   padding: 5px;
   border-radius: 20px;
+}
+
+.mediaIcon {
+  display: none;
 }
 .xIcon {
   float: right;
@@ -128,6 +144,10 @@ a {
   font-size: 27px;
   margin-top: 5px;
   border-radius: 20px;
+}
+.navMouse:hover {
+  background-color: #ddd;
+  cursor: pointer;
 }
 /* nav - search */
 .searchBar {
@@ -178,11 +198,119 @@ a {
   display: inline-block;
 }
 
-/* //////banner */
+/*/////////////////////////DDL */
+.DDL {
+  backdrop-filter: blur(2px);
+  transition: 0.3s;
+  overflow: hidden;
+}
+.ddl-container {
+  position: relative;
+  margin: 10px auto 50px;
+}
+.ddl-column {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  width: 15vw;
+}
+.ddl-list {
+  margin-bottom: 20px;
+}
+.ddl-list li a {
+  font-size: 0.9em;
+  color: #777;
+  line-height: 1.6;
+}
+.ddl-list li a:hover {
+  color: #aaa;
+}
+
+@media (max-width: 857px) {
+  /* hidden middle menu */
+  .NavMenu {
+    width: 0;
+    visibility: hidden;
+  }
+  .mediaIcon {
+    display: inline;
+  }
+  .searchBar {
+    display: none;
+    visibility: hidden;
+  }
+  .mediaHidden {
+    width: 0;
+    visibility: hidden;
+  }
+  /* hidden icon and show icon */
+}
+/* //////////Side bar menu */
+/*  side bar menu- main */
+#SideBarMenu {
+  transition: width 0.5s;
+  height: 900px;
+  width: 0;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  background-color: orange;
+  /* padding: 30px; */
+  text-align: left;
+}
+.menu-wrapper {
+  background-color: yellowgreen;
+  font-size: 24px;
+  line-height: 2;
+  position: relative;
+}
+/* side bar menu - brands */
+.otherBrands {
+  background-color: green;
+  vertical-align: middle;
+  margin: 30px 0;
+}
+.brands {
+  position: relative;
+}
+.side-span {
+  position: absolute;
+  top: 8px;
+  cursor: pointer;
+}
+.sideMenu-icons {
+  padding: 5px;
+}
+/* side bar menu - login */
+.login {
+  background-color: goldenrod;
+  margin: 30px 0;
+}
+.side-login-p {
+  padding: 20px 0;
+  color: #777;
+}
+.side-login-p span {
+  color: black;
+}
+/* side bar menu - bottom */
+.side-bottom {
+  position: relative;
+  background-color: skyblue;
+  padding-bottom: 100px;
+}
+.side-bottom-icon {
+  padding: 5px;
+}
+.relative-wrapper {
+  position: relative;
+}
+/* //////////////////////////banner */
 .VideoPlayer {
   width: 93%;
-  margin: 0 auto;
-  height: 52vw;
+  margin: 60px auto 0;
+  height: 51.9vw;
 }
 
 .Banner {

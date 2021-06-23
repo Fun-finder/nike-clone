@@ -3,61 +3,71 @@ import WhatshotOutlinedIcon from "@material-ui/icons/WhatshotOutlined";
 import EmojiNatureOutlinedIcon from "@material-ui/icons/EmojiNatureOutlined";
 
 function Header() {
-  const [mouseOver1, setMouseOver1] = useState(false);
-  const [mouseOver2, setMouseOver2] = useState(false);
+  const [converse, setConverse] = useState(false);
+  const [jordan, setJordan] = useState(false);
 
-  function overMaterial(event) {
+  function iconOver(event) {
     const id = event.target.name;
     if (id === "firstIcon") {
-      setMouseOver1(true);
+      setConverse(true);
     } else if (id === "secondIcon") {
-      setMouseOver2(true);
+      setJordan(true);
     }
   }
-  function outMaterial(event) {
+  function iconOut(event) {
     const id = event.target.name;
     if (id === "firstIcon") {
-      setMouseOver1(false);
+      setConverse(false);
     } else if (id === "secondIcon") {
-      setMouseOver2(false);
+      setJordan(false);
     }
   }
 
   return (
     <div className="Header">
-      <span className="header-span headerLeft">
-        <a
-          name="firstIcon"
-          className="headerIcons"
-          onMouseOver={overMaterial}
-          onMouseOut={outMaterial}
-          href="/"
-        >
-          <WhatshotOutlinedIcon color={mouseOver1 ? "action" : "primary"} />
-        </a>
-        <a
-          name="secondIcon"
-          onMouseOver={overMaterial}
-          onMouseOut={outMaterial}
-          className="headerIcons"
-          href="/"
-        >
-          <EmojiNatureOutlinedIcon color={mouseOver2 ? "action" : "primary"} />
-        </a>
-      </span>
-      <span className="header-span headerRight">
-        <ul>
-          <li className="headerList listline">
-            <a href="/">고객센터</a>{" "}
-          </li>
-          <li className="headerList listline">
-            <a href="/">멤버 가입</a>{" "}
-          </li>
-          <li className="headerList">
-            <a href="/">로그인</a>
-          </li>
-        </ul>
-      </span>
+      <div className="header-container">
+        <span className="header-span headerLeft">
+          <a
+            href="/"
+            name="firstIcon"
+            className="headerIcons"
+            onMouseOver={iconOver}
+            onMouseOut={iconOut}
+          >
+            <WhatshotOutlinedIcon
+              style={{
+                color: converse ? "#777" : "black",
+                paddingRight: "8px"
+              }}
+            />
+          </a>
+
+          <a
+            href="/"
+            name="secondIcon"
+            onMouseOver={iconOver}
+            onMouseOut={iconOut}
+            className="headerIcons"
+          >
+            <EmojiNatureOutlinedIcon
+              style={{ color: jordan ? "#777" : "black" }}
+            />
+          </a>
+        </span>
+        <span className="header-span headerRight">
+          <ul>
+            <li className="headerList listline">
+              <a href="/">고객센터</a>{" "}
+            </li>
+            <li className="headerList listline">
+              <a href="/">멤버 가입</a>{" "}
+            </li>
+            <li className="headerList">
+              <a href="/">로그인</a>
+            </li>
+          </ul>
+        </span>
+      </div>
     </div>
   );
 }
