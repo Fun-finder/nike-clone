@@ -156,12 +156,13 @@ function NavBar() {
     const bodys = document.getElementById("bodyBlur").style;
     // for not to moving nav-bar
     setClickedSide(true);
+    // sidebarMenu.width = "240px";
 
-    sidebarMenu.width = "240px";
-    sidebarMenu.padding = "30px";
+    sidebarMenu.width = "300px";
     sidebarMenu.position = "fixed";
     sidebarMenu.maxHeight = "100vh";
     sidebarMenu.overflowY = "scroll";
+    sidebarMenu.overflowX = "scroll";
 
     navBar.filter = "blur(5px)";
     bodys.overflowY = "hidden";
@@ -183,19 +184,19 @@ function NavBar() {
     bodys.overflowY = "auto";
     bodys.height = "";
     bodys.filter = "";
+    document.getElementById("sideBar-wrapper").style.transform =
+      "translateX(0)";
   }
-  // if (isClickedSide) {
-  //   document.body.addEventListener("click", function (e) {
-  //     const pointX = e.clientX;
-  //     const bodyWidth = this.offsetWidth;
+  if (isClickedSide) {
+    document.body.addEventListener("click", function (e) {
+      const pointX = e.clientX;
+      const bodyWidth = this.offsetWidth;
 
-  //     if (pointX > bodyWidth - 300) {
-  //       offSide();
-  //     }
-  //     console.log(e.clientX);
-  //     console.log(this.offsetWidth);
-  //   });
-  // }
+      if (pointX < bodyWidth - 300) {
+        offSide();
+      }
+    });
+  }
 
   return (
     <div className="fixedNav" style={scroll}>
