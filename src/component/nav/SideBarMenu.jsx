@@ -45,46 +45,6 @@ function arrowReverse() {
     />
   );
 }
-function renderSecondMenu(name) {
-  if (name === "releases") {
-    return release();
-  } else if (name === "men") {
-    return men();
-  } else if (name === "women") {
-    return women();
-  } else if (name === "kids") {
-    return kids();
-  } else if (name === "sale") {
-    return sale();
-  } else if (name === "brand") {
-    return brand();
-  }
-}
-function renderThirdMenu(name) {
-  if (name === "releases") {
-    return release();
-  } else if (name === "new") {
-    return menNew();
-  } else if (name === "shoes") {
-    return menShoes();
-  } else if (name === "product") {
-    return menProduct();
-  } else if (name === "sports") {
-    return menSports();
-  } else if (name === "brand") {
-    return menBrand();
-  } else if (name === "clothes") {
-    return menClothes();
-  }
-}
-
-let thirdName = "new";
-
-function thirdMenu(e) {
-  const name = e.target.getAttribute("name");
-  thirdName = name;
-}
-
 /////////translate X function////////////
 function moveFirst() {
   document.getElementById("sideBar-wrapper").style.transform = "translateX(0)";
@@ -100,10 +60,345 @@ function moveThird() {
 
 export default function SideBarMenu() {
   const [which2Menu, set2Menu] = useState("releases");
+  const [which3Menu, set3Menu] = useState("new");
 
   function secondMenu(e) {
     const name = e.target.getAttribute("name");
     set2Menu(name);
+  }
+
+  function renderSecondMenu(name) {
+    if (name === "releases") {
+      return release();
+    } else if (name === "men") {
+      return men();
+    } else if (name === "women") {
+      return women();
+    } else if (name === "kids") {
+      return kids();
+    } else if (name === "sale") {
+      return sale();
+    } else if (name === "brand") {
+      return brand();
+    }
+  }
+
+  function thirdMenu(e) {
+    const name = e.target.getAttribute("name");
+    set3Menu(name);
+  }
+
+  function renderThirdMenu(name) {
+    if (name === "releases") {
+      return release();
+    } else if (name === "new") {
+      return menNew();
+    } else if (name === "shoes") {
+      return menShoes();
+    } else if (name === "product") {
+      return menProduct();
+    } else if (name === "sports") {
+      return menSports();
+    } else if (name === "brand") {
+      return menBrand();
+    } else if (name === "clothes") {
+      return menClothes();
+    }
+  }
+
+  function release() {
+    return (
+      <div className="second-side sideLayout">
+        <div className="prevSide allgrey" onClick={moveFirst}>
+          {arrowReverse()}
+          All
+        </div>
+        <div className="side-second-title">New Releases</div>
+        <div className="side-second-menu relative-wrapper">
+          <ul>
+            <li>신상품 전체보기</li>
+            <li>SNKRS</li>
+            <li>에어 포스 1</li>
+            <li>ACG</li>
+            <li>NikeLab</li>
+            <li>New For Men{secondArrow()}</li>
+            <li>New For Women{secondArrow()}</li>
+            <li>New For Kids{secondArrow()}</li>
+            <li>썸머 에센셜</li>
+            <li>지속 가능 컬렉션</li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
+  function men() {
+    return (
+      <div className="second-side sideLayout">
+        <div className="prevSide allgrey" onClick={moveFirst}>
+          {arrowReverse()}
+          All
+        </div>
+        <div className="side-second-title">Men</div>
+        <div className="side-second-menu relative-wrapper" onClick={thirdMenu}>
+          <ul>
+            <li name="new" onClick={moveThird}>
+              New & Featured{secondArrow()}
+            </li>
+            <li>신상품</li>
+            <li name="shoes" onClick={moveThird}>
+              신발{secondArrow()}
+            </li>
+            <li name="clothes" onClick={moveThird}>
+              의류{secondArrow()}
+            </li>
+            <li name="product" onClick={moveThird}>
+              용품{secondArrow()}
+            </li>
+            <li name="sports" onClick={moveThird}>
+              스포츠{secondArrow()}
+            </li>
+            <li name="brand" onClick={moveThird}>
+              브랜드{secondArrow()}
+            </li>
+            <li>남성 메인</li>
+            <li>홈트레이닝 컬렉션</li>
+            <li>SNKRS</li>
+            <li>SALE</li>
+            <li>지속 가능 컬렉션</li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
+  function women() {
+    return (
+      <div className="second-side sideLayout">
+        <div className="prevSide allgrey" onClick={moveFirst}>
+          {arrowReverse()}
+          All
+        </div>
+        <div className="side-second-title">Women</div>
+        <div className="side-second-menu relative-wrapper">
+          <ul>
+            <li>New & Featured{secondArrow()}</li>
+            <li>신상품</li>
+            <li>신발{secondArrow()}</li>
+            <li>의류{secondArrow()}</li>
+            <li>용품{secondArrow()}</li>
+            <li>스포츠{secondArrow()}</li>
+            <li>브랜드{secondArrow()}</li>
+            <li>여성 메인</li>
+            <li>홈트레이닝 컬렉션</li>
+            <li>SNKRS</li>
+            <li>SALE</li>
+            <li>지속 가능 컬렉션</li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
+  function kids() {
+    return (
+      <div className="second-side sideLayout">
+        <div className="prevSide allgrey" onClick={moveFirst}>
+          {arrowReverse()}
+          All
+        </div>
+        <div className="side-second-title">Kids</div>
+        <div className="side-second-menu relative-wrapper">
+          <ul>
+            <li>New & Featured{secondArrow()}</li>
+            <li>신상품</li>
+            <li>사이즈별{secondArrow()}</li>
+            <li>신발{secondArrow()}</li>
+            <li>의류{secondArrow()}</li>
+            <li>악세사리 & 용품</li>
+            <li>스포츠{secondArrow()}</li>
+            <li>Kids 메인</li>
+            <li>SALE</li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
+  function sale() {
+    return (
+      <div className="second-side sideLayout">
+        <div className="prevSide allgrey" onClick={moveFirst}>
+          {arrowReverse()}
+          All
+        </div>
+        <div className="side-second-title">SALE</div>
+        <div className="side-second-menu relative-wrapper">
+          <ul>
+            <li>NEW TO SALE</li>
+            <li>MEN</li>
+            <li>WOMEN</li>
+            <li>KIDS</li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
+  function brand() {
+    return (
+      <div className="second-side sideLayout">
+        <div className="prevSide allgrey" onClick={moveFirst}>
+          {arrowReverse()}
+          All
+        </div>
+        <div className="side-second-title">Brand</div>
+        <div className="side-second-menu relative-wrapper">
+          <ul>
+            <li>Nike Sportswear</li>
+            <li>NikeLab</li>
+            <li>Jordan</li>
+            <li>Converse</li>
+            <li>NBA</li>
+            <li>ACG</li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
+
+  function menNew() {
+    return (
+      <div className="Third-side sideLayout">
+        <div className="prevSide allgrey" onClick={moveSecond}>
+          {arrowReverse()}
+          Men
+        </div>
+        <div className="side-second-title">New & Featured</div>
+        <div className="side-second-menu relative-wrapper">
+          <ul>
+            <li>SNKRS</li>
+            <li>THE BEST</li>
+            <li>MEMBER SHOP</li>
+            <li>썸머 에센셜</li>
+            <li>세계 요가의 날 컬렉션</li>
+            <li>런 피어리스 프로젝트 러닝화</li>
+            <li>젠더리스 컬렉션</li>
+            <li>에슬릿 리뷰</li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
+  function menShoes() {
+    return (
+      <div className="Third-side sideLayout">
+        <div className="prevSide allgrey" onClick={moveSecond}>
+          {arrowReverse()}
+          Men
+        </div>
+        <div className="side-second-title">신발</div>
+        <div className="side-second-menu relative-wrapper">
+          <ul>
+            <li>전체보기</li>
+            <li>라이프스타일</li>
+            <li>러닝</li>
+            <li>트레이닝 & 짐</li>
+            <li>농구</li>
+            <li>조던</li>
+            <li>축구</li>
+            <li>스케이트보딩</li>
+            <li>골프</li>
+            <li>테니스</li>
+            <li>샌들 & 슬리퍼</li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
+  function menClothes() {
+    return (
+      <div className="Third-side sideLayout">
+        <div className="prevSide allgrey" onClick={moveSecond}>
+          {arrowReverse()}
+          Men
+        </div>
+        <div className="side-second-title">의류</div>
+        <div className="side-second-menu relative-wrapper">
+          <ul>
+            <li>의류 전체</li>
+            <li>탑 & 티셔츠</li>
+            <li>숏 팬츠</li>
+            <li>후디 & 크루</li>
+            <li>팬츠 & 타이츠</li>
+            <li>재킷 & 베스트</li>
+            <li>나이키 프로</li>
+            <li>양말</li>
+            <li>셋업</li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
+  function menProduct() {
+    return (
+      <div className="Third-side sideLayout">
+        <div className="prevSide allgrey" onClick={moveSecond}>
+          {arrowReverse()}
+          Men
+        </div>
+        <div className="side-second-title">용품</div>
+        <div className="side-second-menu relative-wrapper">
+          <ul>
+            <li>모자 & 헤드밴드</li>
+            <li>가방</li>
+            <li>보호대</li>
+            <li>슬리브 & 암밴드</li>
+            <li>장갑</li>
+            <li>트레이닝 & 짐</li>
+            <li>애플웨치</li>
+            <li>공</li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
+  function menSports() {
+    return (
+      <div className="Third-side sideLayout">
+        <div className="prevSide allgrey" onClick={moveSecond}>
+          {arrowReverse()}
+          Men
+        </div>
+        <div className="side-second-title">스포츠</div>
+        <div className="side-second-menu relative-wrapper">
+          <ul>
+            <li>러닝</li>
+            <li>트레이닝 & 짐</li>
+            <li>농구</li>
+            <li>축구</li>
+            <li>스케이트보딩</li>
+            <li>골프</li>
+            <li>테니스</li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
+  function menBrand() {
+    return (
+      <div className="Third-side sideLayout">
+        <div className="prevSide allgrey" onClick={moveSecond}>
+          {arrowReverse()}
+          Men
+        </div>
+        <div className="side-second-title">브랜드</div>
+        <div className="side-second-menu relative-wrapper">
+          <ul>
+            <li>Nike Sportswear</li>
+            <li>NikeLab</li>
+            <li>Jordan</li>
+            <li>NBA</li>
+            <li>ACG</li>
+          </ul>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -176,302 +471,7 @@ export default function SideBarMenu() {
           </div>
         </div>
         {renderSecondMenu(which2Menu)}
-        {renderThirdMenu(thirdName)}
-      </div>
-    </div>
-  );
-}
-
-function release() {
-  return (
-    <div className="second-side sideLayout">
-      <div className="prevSide allgrey" onClick={moveFirst}>
-        {arrowReverse()}
-        All
-      </div>
-      <div className="side-second-title">New Releases</div>
-      <div className="side-second-menu relative-wrapper">
-        <ul>
-          <li>신상품 전체보기</li>
-          <li>SNKRS</li>
-          <li>에어 포스 1</li>
-          <li>ACG</li>
-          <li>NikeLab</li>
-          <li>New For Men{secondArrow()}</li>
-          <li>New For Women{secondArrow()}</li>
-          <li>New For Kids{secondArrow()}</li>
-          <li>썸머 에센셜</li>
-          <li>지속 가능 컬렉션</li>
-        </ul>
-      </div>
-    </div>
-  );
-}
-function men() {
-  return (
-    <div className="second-side sideLayout">
-      <div className="prevSide allgrey" onClick={moveFirst}>
-        {arrowReverse()}
-        All
-      </div>
-      <div className="side-second-title">Men</div>
-      <div className="side-second-menu relative-wrapper" onClick={thirdMenu}>
-        <ul>
-          <li name="new" onClick={moveThird}>
-            New & Featured{secondArrow()}
-          </li>
-          <li>신상품</li>
-          <li name="shoes" onClick={moveThird}>
-            신발{secondArrow()}
-          </li>
-          <li name="clothes" onClick={moveThird}>
-            의류{secondArrow()}
-          </li>
-          <li name="product" onClick={moveThird}>
-            용품{secondArrow()}
-          </li>
-          <li name="sports" onClick={moveThird}>
-            스포츠{secondArrow()}
-          </li>
-          <li name="brand" onClick={moveThird}>
-            브랜드{secondArrow()}
-          </li>
-          <li>남성 메인</li>
-          <li>홈트레이닝 컬렉션</li>
-          <li>SNKRS</li>
-          <li>SALE</li>
-          <li>지속 가능 컬렉션</li>
-        </ul>
-      </div>
-    </div>
-  );
-}
-function women() {
-  return (
-    <div className="second-side sideLayout">
-      <div className="prevSide allgrey" onClick={moveFirst}>
-        {arrowReverse()}
-        All
-      </div>
-      <div className="side-second-title">Women</div>
-      <div className="side-second-menu relative-wrapper">
-        <ul>
-          <li>New & Featured{secondArrow()}</li>
-          <li>신상품</li>
-          <li>신발{secondArrow()}</li>
-          <li>의류{secondArrow()}</li>
-          <li>용품{secondArrow()}</li>
-          <li>스포츠{secondArrow()}</li>
-          <li>브랜드{secondArrow()}</li>
-          <li>여성 메인</li>
-          <li>홈트레이닝 컬렉션</li>
-          <li>SNKRS</li>
-          <li>SALE</li>
-          <li>지속 가능 컬렉션</li>
-        </ul>
-      </div>
-    </div>
-  );
-}
-function kids() {
-  return (
-    <div className="second-side sideLayout">
-      <div className="prevSide allgrey" onClick={moveFirst}>
-        {arrowReverse()}
-        All
-      </div>
-      <div className="side-second-title">Kids</div>
-      <div className="side-second-menu relative-wrapper">
-        <ul>
-          <li>New & Featured{secondArrow()}</li>
-          <li>신상품</li>
-          <li>사이즈별{secondArrow()}</li>
-          <li>신발{secondArrow()}</li>
-          <li>의류{secondArrow()}</li>
-          <li>악세사리 & 용품</li>
-          <li>스포츠{secondArrow()}</li>
-          <li>Kids 메인</li>
-          <li>SALE</li>
-        </ul>
-      </div>
-    </div>
-  );
-}
-function sale() {
-  return (
-    <div className="second-side sideLayout">
-      <div className="prevSide allgrey" onClick={moveFirst}>
-        {arrowReverse()}
-        All
-      </div>
-      <div className="side-second-title">SALE</div>
-      <div className="side-second-menu relative-wrapper">
-        <ul>
-          <li>NEW TO SALE</li>
-          <li>MEN</li>
-          <li>WOMEN</li>
-          <li>KIDS</li>
-        </ul>
-      </div>
-    </div>
-  );
-}
-function brand() {
-  return (
-    <div className="second-side sideLayout">
-      <div className="prevSide allgrey" onClick={moveFirst}>
-        {arrowReverse()}
-        All
-      </div>
-      <div className="side-second-title">Brand</div>
-      <div className="side-second-menu relative-wrapper">
-        <ul>
-          <li>Nike Sportswear</li>
-          <li>NikeLab</li>
-          <li>Jordan</li>
-          <li>Converse</li>
-          <li>NBA</li>
-          <li>ACG</li>
-        </ul>
-      </div>
-    </div>
-  );
-}
-
-function menNew() {
-  return (
-    <div className="Third-side sideLayout">
-      <div className="prevSide allgrey" onClick={moveSecond}>
-        {arrowReverse()}
-        Men
-      </div>
-      <div className="side-second-title">New & Featured</div>
-      <div className="side-second-menu relative-wrapper">
-        <ul>
-          <li>SNKRS</li>
-          <li>THE BEST</li>
-          <li>MEMBER SHOP</li>
-          <li>썸머 에센셜</li>
-          <li>세계 요가의 날 컬렉션</li>
-          <li>런 피어리스 프로젝트 러닝화</li>
-          <li>젠더리스 컬렉션</li>
-          <li>에슬릿 리뷰</li>
-        </ul>
-      </div>
-    </div>
-  );
-}
-function menShoes() {
-  return (
-    <div className="Third-side sideLayout">
-      <div className="prevSide allgrey" onClick={moveSecond}>
-        {arrowReverse()}
-        Men
-      </div>
-      <div className="side-second-title">신발</div>
-      <div className="side-second-menu relative-wrapper">
-        <ul>
-          <li>전체보기</li>
-          <li>라이프스타일</li>
-          <li>러닝</li>
-          <li>트레이닝 & 짐</li>
-          <li>농구</li>
-          <li>조던</li>
-          <li>축구</li>
-          <li>스케이트보딩</li>
-          <li>골프</li>
-          <li>테니스</li>
-          <li>샌들 & 슬리퍼</li>
-        </ul>
-      </div>
-    </div>
-  );
-}
-function menClothes() {
-  return (
-    <div className="Third-side sideLayout">
-      <div className="prevSide allgrey" onClick={moveSecond}>
-        {arrowReverse()}
-        Men
-      </div>
-      <div className="side-second-title">의류</div>
-      <div className="side-second-menu relative-wrapper">
-        <ul>
-          <li>의류 전체</li>
-          <li>탑 & 티셔츠</li>
-          <li>숏 팬츠</li>
-          <li>후디 & 크루</li>
-          <li>팬츠 & 타이츠</li>
-          <li>재킷 & 베스트</li>
-          <li>나이키 프로</li>
-          <li>양말</li>
-          <li>셋업</li>
-        </ul>
-      </div>
-    </div>
-  );
-}
-function menProduct() {
-  return (
-    <div className="Third-side sideLayout">
-      <div className="prevSide allgrey" onClick={moveSecond}>
-        {arrowReverse()}
-        Men
-      </div>
-      <div className="side-second-title">용품</div>
-      <div className="side-second-menu relative-wrapper">
-        <ul>
-          <li>모자 & 헤드밴드</li>
-          <li>가방</li>
-          <li>보호대</li>
-          <li>슬리브 & 암밴드</li>
-          <li>장갑</li>
-          <li>트레이닝 & 짐</li>
-          <li>애플웨치</li>
-          <li>공</li>
-        </ul>
-      </div>
-    </div>
-  );
-}
-function menSports() {
-  return (
-    <div className="Third-side sideLayout">
-      <div className="prevSide allgrey" onClick={moveSecond}>
-        {arrowReverse()}
-        Men
-      </div>
-      <div className="side-second-title">스포츠</div>
-      <div className="side-second-menu relative-wrapper">
-        <ul>
-          <li>러닝</li>
-          <li>트레이닝 & 짐</li>
-          <li>농구</li>
-          <li>축구</li>
-          <li>스케이트보딩</li>
-          <li>골프</li>
-          <li>테니스</li>
-        </ul>
-      </div>
-    </div>
-  );
-}
-function menBrand() {
-  return (
-    <div className="Third-side sideLayout">
-      <div className="prevSide allgrey" onClick={moveSecond}>
-        {arrowReverse()}
-        Men
-      </div>
-      <div className="side-second-title">브랜드</div>
-      <div className="side-second-menu relative-wrapper">
-        <ul>
-          <li>Nike Sportswear</li>
-          <li>NikeLab</li>
-          <li>Jordan</li>
-          <li>NBA</li>
-          <li>ACG</li>
-        </ul>
+        {renderThirdMenu(which3Menu)}
       </div>
     </div>
   );

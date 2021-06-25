@@ -355,7 +355,7 @@ a {
 }
 
 .Banner {
-  width: 700px;
+  width: 80vw;
 
   margin: 15px auto 80px;
 }
@@ -402,7 +402,7 @@ a {
 }
 .slider {
   width: 100%;
-  height: 40vw;
+  height: 50vw;
   position: relative;
   display: flex;
   overflow: hidden;
@@ -410,7 +410,7 @@ a {
 .slide {
   display: flex;
   height: 33vw;
-  animation: slideshow 15s linear infinite;
+  animation: slideshow 30s linear infinite;
 }
 .carouselImgs {
   width: 25vw;
@@ -545,8 +545,11 @@ a {
   padding: 20px;
   margin: 0 auto;
 }
-.customerService div {
+.cus {
   width: 20vw;
+}
+.custom-device {
+  display: none;
 }
 
 .csDiv {
@@ -592,4 +595,98 @@ a {
 }
 .noChange {
   color: #999;
+}
+/* media query for front page */
+@media screen and (max-width: 640px) {
+  .Banner {
+    text-align: left;
+    padding: 0;
+    margin: 30px auto 40px;
+  }
+  .bannerTitle {
+    font-size: 27px;
+    padding: 0;
+  }
+  .bannerContent {
+    padding: 0;
+  }
+  .bannerButton {
+    font-size: 14px;
+  }
+  /* imageSlider media query */
+  .ImageSlider div {
+    height: 110vw;
+  }
+  .slide img {
+    width: 55vw;
+    height: 110vw;
+  }
+  .slide {
+    animation: slideshow 34s infinite;
+  }
+  /* images and slowSlider */
+  .Images {
+    height: 70vw;
+  }
+  .img-disap {
+    display: none;
+  }
+  .Images-img {
+    width: 100%;
+  }
+  .get-bigger {
+    width: 100%;
+    height: 100%;
+  }
+  .test {
+    height: 93vw;
+  }
+  .slowImg {
+    height: 90%;
+  }
+  .slowWrapper {
+    height: auto;
+  }
+  /*//////////// footer */
+  .customer2,
+  .customer3,
+  .customer4 {
+    display: none;
+  }
+  .copy-right {
+    display: block;
+    float: none;
+  }
+  .copyright {
+    text-align: center;
+    height: 60px;
+  }
+  .change-line {
+    display: none;
+  }
+  .change-line::after {
+    display: block;
+  }
+  .company-content {
+    display: block;
+    width: 93vw;
+  }
+  .custom-desktop {
+    display: none;
+  }
+  .customer1 {
+    width: 300px;
+  }
+  .custom-device,
+  .customUl {
+    display: inline;
+  }
+  .horisontal {
+    float: left;
+    padding: 0 20px;
+  }
+}
+.swiper-button-next,
+.swiper-button-prev {
+  visibility: hidden;
 }

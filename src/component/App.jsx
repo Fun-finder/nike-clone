@@ -16,22 +16,22 @@ export default function App() {
       <Header />
       <NavBar />
       <div id="bodyBlur">
-        {/* <VideoPlayer url="https://youtu.be/-SBsT032jVI" /> */}
+        {/* <VideoPlayer url="https://youtu.be/-SBsT032jVI" />
         <Banner
           title={Array.summer.title}
           content={Array.summer.content}
           button={Array.summer.button}
         />
-        {/* <dt className="sliderTitle">이번 주 스타일링</dt> */}
+        <dt className="sliderTitle">이번 주 스타일링</dt>
 
-        {/* <ImageSlider />
+        <ImageSlider />
         <Banner
           title={Array.sandel.title}
           content={Array.sandel.content}
           button={Array.sandel.button}
-        /> */}
-        {/* <VideoPlayer url="https://youtu.be/7BeaT2LlAQ8" /> */}
-        {/* <Banner
+        />
+        <VideoPlayer url="https://youtu.be/7BeaT2LlAQ8" />
+        <Banner
           title={Array.tShirts.title}
           content={Array.tShirts.content}
           button={Array.tShirts.button}

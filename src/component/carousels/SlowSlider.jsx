@@ -25,10 +25,10 @@ export default function SlowSlide() {
   return (
     <div className="slowContainer">
       <div className="slowWrapper">
-        <div className="imgFrame">
+        <div className="imgFrame get-bigger">
           <img className="slowImg" src={firstImg} alt="" />
         </div>
-        <div className="imgFrame">
+        <div className="imgFrame img-disap">
           <img className="slowImg" src={secondImg} alt="" />
         </div>
       </div>
