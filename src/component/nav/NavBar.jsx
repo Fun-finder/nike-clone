@@ -88,14 +88,29 @@ function NavBar() {
   // ////////////////scroll function/////////////
   const [scroll, setScroll] = useState();
   var prevScrollpos = window.pageYOffset;
+
   window.onscroll = function () {
     var currentScrollPos = window.pageYOffset;
+    var itemNav = document.getElementById("item-nav").style;
+    var itemSide = document.getElementById("item-sidebar").style;
+    var itemSideTitle = document.getElementById("item-nav-title").style;
+
     if (currentScrollPos <= 35) {
       setScroll();
+      itemSideTitle.fontSize = "30px";
+      itemNav.top = "30px";
     } else if (prevScrollpos > currentScrollPos) {
       setScroll({ top: "0" });
+      itemSide.top = "160px";
+      itemSideTitle.fontSize = "22px";
+      itemSide.maxHeight = "calc(100vh - 160px)";
+      itemNav.top = "-10px";
     } else if (isClickedSide === false) {
       setScroll({ top: "-60px" });
+      itemSide.top = "100px";
+      itemSideTitle.fontSize = "22px";
+      itemSide.maxHeight = "calc(100vh - 130px)";
+      itemNav.top = "-60px";
     }
     prevScrollpos = currentScrollPos;
   };
